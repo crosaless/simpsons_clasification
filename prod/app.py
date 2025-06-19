@@ -4,7 +4,7 @@ import torch
 from torchvision import transforms
 from utils import load_model, predict_character
 
-model, idx_to_class = load_model('modelo.pth')
+model, idx_to_class = load_model('prod/modelo.pth')
 model.eval()
 
 # Se hace la misma transformación que en el entrenamiento 
