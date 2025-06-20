@@ -4,6 +4,11 @@ Este proyecto implementa un sistema de reconocimiento de personajes de Los Simps
 
 El modelo fue entrenado sobre un conjunto de imágenes etiquetadas de los personajes más icónicos, y luego se utiliza para identificar nuevos rostros a partir de su representación vectorial.
 
+## Clonar repositorio
+
+    git clone https://github.com/crosaless/simpsons_clasification.git
+
+
 ## Instalar Dependencias
 
     pip install -r prod/requirements.txt
