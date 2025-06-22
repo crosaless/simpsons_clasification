@@ -19,4 +19,4 @@ El modelo fue entrenado sobre un conjunto de imágenes etiquetadas de los person
 
 O entra a la aplicación en Community Cloud:
 
-(proximamente)
+[Cliquea aqui](https://simpsonsclasification.streamlit.app/)
