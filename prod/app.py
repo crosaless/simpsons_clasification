@@ -102,7 +102,7 @@ transform = transforms.Compose([
 
 # Interfaz de usuario
 st.title("🟡 Detector de Personajes de Los Simpsons")
-st.markdown("### Utilizando Triplet Loss y Embeddings")
+st.markdown("### Utilizando pérdida de la trilliza y embeddings")
 
 # Mostrar error si el modelo no se pudo cargar
 if error_msg:
@@ -133,9 +133,7 @@ with st.expander("🔧 Información técnica"):
                     output = model(dummy_input)
             st.success(f"✅ Modelo funcional - Dimensión de embeddings: {output.shape[1]}")
             
-            # Mostrar arquitectura del modelo
-            if st.button("🏗️ Mostrar arquitectura detallada"):
-                debug_model_architecture(model)
+            
                 
         except Exception as e:
             st.error(f"❌ Error en test del modelo: {e}")
@@ -186,7 +184,7 @@ if uploaded_file is not None:
         
         with col2:
             # Procesar imagen
-            with st.spinner("🔄 Analizando imagen con Triplet Loss..."):
+            with st.spinner("🔄 Analizando imagen..."):
                 # Aplicar transformaciones
                 tensor = transform(image).unsqueeze(0)
                 
@@ -271,19 +269,13 @@ if uploaded_file is not None:
                         
                         # Información del embedding
                         if query_embedding is not None:
-                            st.markdown("---")
-                            st.info(f"📊 **Dimensión del embedding:** {query_embedding.shape}")
+                            
                             
                             # Mostrar distribución del embedding
                             if len(query_embedding.shape) > 1:
                                 emb_flat = query_embedding.flatten()
                             else:
                                 emb_flat = query_embedding
-                            
-                            st.markdown(f"**Estadísticas del embedding:**")
-                            st.markdown(f"- Media: {np.mean(emb_flat):.4f}")
-                            st.markdown(f"- Desviación estándar: {np.std(emb_flat):.4f}")
-                            st.markdown(f"- Min/Max: {np.min(emb_flat):.4f} / {np.max(emb_flat):.4f}")
                     else:
                         st.error("❌ No se pudieron obtener predicciones válidas")
                 else:
@@ -348,22 +340,16 @@ with st.expander("⚙️ Configuración avanzada"):
             st.markdown(f"- Personajes: {len(reference_embeddings)}")
             sample_char = list(reference_embeddings.keys())[0]
             sample_emb = reference_embeddings[sample_char]
-            if torch.is_tensor(sample_emb):
-                st.markdown(f"- Dimensión: {sample_emb.shape}")
-            else:
-                st.markdown(f"- Dimensión: {sample_emb.shape}")
-        elif torch.is_tensor(reference_embeddings):
-            st.markdown(f"- Formato: Tensor")
-            st.markdown(f"- Shape: {reference_embeddings.shape}")
+            
 
 # Footer
 st.markdown("---")
 st.markdown(
     """
     <div style='text-align: center; color: gray;'>
-        Desarrollado con ❤️ para el Trabajo Práctico Integrador<br>
+        Desarrollado para el Trabajo Práctico Integrador de<br>
         Redes Neuronales Profundas - Ingeniería en Sistemas de Información<br>
-        <em>Usando Triplet Loss para embeddings de alta calidad</em>
+        
     </div>
     """, 
     unsafe_allow_html=True
