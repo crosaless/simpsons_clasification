@@ -65,7 +65,7 @@ def load_cached_model():
         
         # Debug: inspeccionar archivo de embeddings
         if os.path.exists(embeddings_path):
-            st.info("🔍 Inspeccionando archivo de embeddings...")
+            #st.info("🔍 Inspeccionando archivo de embeddings...")
             debug_data = debug_embeddings_file(embeddings_path)
             
             reference_embeddings = load_reference_embeddings(embeddings_path)
@@ -77,7 +77,8 @@ def load_cached_model():
         is_valid = validate_model_and_embeddings(model, reference_embeddings)
         
         if is_valid:
-            st.success("✅ Modelo y embeddings cargados correctamente")
+            print("✅ Modelo y embeddings cargados correctamente")
+            #st.success("✅ Modelo y embeddings cargados correctamente")
         else:
             st.warning("⚠️ Modelo cargado con advertencias - puede haber incompatibilidades")
         
@@ -131,7 +132,7 @@ with st.expander("🔧 Información técnica"):
                     output = model.forward_normalized(dummy_input)
                 else:
                     output = model(dummy_input)
-            st.success(f"✅ Modelo funcional - Dimensión de embeddings: {output.shape[1]}")
+            st.success(f"✅ Modelo funcionando")
             
             
                 
