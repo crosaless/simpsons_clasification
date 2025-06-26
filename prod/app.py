@@ -181,7 +181,7 @@ if uploaded_file is not None:
         col1, col2 = st.columns([1, 1])
         
         with col1:
-            st.image(image, caption="📸 Imagen subida", use_column_width=True)
+            st.image(image, caption="📸 Imagen subida", use_container_width=True)
         
         with col2:
             # Procesar imagen
@@ -290,12 +290,11 @@ if uploaded_file is not None:
         with st.expander("🐛 Información de debug"):
             st.markdown("**Transformaciones aplicadas:**")
             st.code("""
-            1. Resize a (224, 224)
+            1. Resize a (128, 128)
             2. Conversión a Tensor
             3. Normalización ImageNet
             """)
-            st.markdown(f"**Tensor shape:** {tensor.shape}")
-            st.markdown(f"**Tensor range:** [{tensor.min():.3f}, {tensor.max():.3f}]")
+            
             
             # Información del modelo
             if model is not None:
