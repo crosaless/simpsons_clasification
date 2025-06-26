@@ -313,15 +313,7 @@ if uploaded_file is not None:
 with st.expander("⚙️ Configuración avanzada"):
     st.markdown("**Parámetros del modelo:**")
     
-    # Selector de umbral
-    threshold = st.slider(
-        "Umbral de confianza",
-        min_value=0.0,
-        max_value=1.0,
-        value=0.6,
-        step=0.05,
-        help="Umbral mínimo para considerar una predicción válida"
-    )
+    
     
     # Selector de backbone (para información)
     backbone_info = st.selectbox(
@@ -332,14 +324,6 @@ with st.expander("⚙️ Configuración avanzada"):
         help="Arquitectura base del modelo (solo información)"
     )
     
-    # Información de embeddings
-    if reference_embeddings is not None:
-        st.markdown("**Embeddings de referencia:**")
-        if isinstance(reference_embeddings, dict):
-            st.markdown(f"- Formato: Diccionario")
-            st.markdown(f"- Personajes: {len(reference_embeddings)}")
-            sample_char = list(reference_embeddings.keys())[0]
-            sample_emb = reference_embeddings[sample_char]
             
 
 # Footer
