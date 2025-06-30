@@ -7,7 +7,8 @@ El modelo fue entrenado sobre un conjunto de imágenes etiquetadas de los person
 El modelo elegido fue una densenet121 por los resultados obtenidos en los accuracy de entrenamiento y testeo.  
 
 ## Estructura del proyecto
-proyecto/
+```
+    proyecto/
 ├── prod/
 │   ├── app.py                   #Aplicación principal
 │   ├── utils.py                 #Funciones auxiliares
@@ -20,7 +21,9 @@ proyecto/
 │   └── requirements.txt
 ├── data/   #contiene el dataset usado en el entrenamiento y los archivos auxiliares de prepocesamiento
 │── dev/    #notebooks realizados en colab para entrenar los modelos
-└── README.md
+└── README.md 
+```
+
 
 ## Clonar repositorio
 
